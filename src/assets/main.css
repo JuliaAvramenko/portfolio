@@ -1,0 +1,40 @@
+@import './base.css';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#app {
+  /* max-width: 1900px; */
+  width: 100%;
+  /* margin: 0 auto;
+  padding: 2rem; */
+  /* font-weight: normal; */
+  background-color: rgba(207, 190, 190, 0.473);
+}
+
+
+@font-face {
+  font-family: "Gilroy-Semibold";
+  src: url("../fonts/Gilroy-Semibold.ttf");
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather-Black.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-Extra-Bold";
+  src: url("../fonts/Gilroy-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url("../fonts/Gilroy-Light.otf");
+}
