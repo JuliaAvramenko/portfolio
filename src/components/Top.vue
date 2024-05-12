@@ -1,5 +1,20 @@
 <script setup>
 import Header from './Header.vue';
+import { ref } from 'vue';
+
+const lowResImage = '../assets/images/julia-min.jpg'; // Путь к изображению низкого разрешения
+const highResImage = '../assets/images/julia.jpeg'; // Путь к изображению высокого разрешения
+const imageUrl = ref(lowResImage); // Начальное изображение
+
+function loadHighResImage() {
+// Загрузка изображения высокого разрешения
+const img = new Image();
+img.src = highResImage;
+img.onload = () => {
+// Обновление изображения на высокое разрешение
+imageUrl.value = highResImage;
+};
+}
 
 
 </script>
@@ -8,7 +23,7 @@ import Header from './Header.vue';
     <section class="top">
             <div class="top__container">
                 <Header></Header>
-                <img src="../assets/images/julia-min.jpg" data-src="./images/julia.jpeg"
+                <img :src="imageUrl" @load="loadHighResImage"
                     alt="портрет" class="top__image async_image">                
                 <div class="top__wrapper">
                     <p class="top__text">Hello, I'm</p>
