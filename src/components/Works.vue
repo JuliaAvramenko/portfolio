@@ -1,160 +1,92 @@
 <script setup>
 import { ref } from 'vue';
 
-const slides = ref([ 
-// { url: '' },
-// { url: '' }, 
-// { url: '' },
-{ url: 'https://juliaavramenko.github.io/react-nft-project/' },
-{ url: 'https://juliaavramenko.github.io/decent-test-task/' }, 
-{ url: 'https://juliaavramenko.github.io/forecast-vue-test-task/' }, 
-{ url: 'https://juliaavramenko.github.io/go-scooter-pass/' },
-{ url: 'https://juliaavramenko.github.io/ams-software-test-task/' }, 
-{ url: 'https://juliaavramenko.github.io/burger-react-practicum/' },
-{ url: 'https://juliaavramenko.github.io/house-hunter-react/' }, 
-{ url: 'https://juliaavramenko.github.io/language-school/' },
-{ url: 'https://juliaavramenko.github.io/it-studio/' },   
-{ url: 'https://juliaavramenko.github.io/russian-travel-JUL-LIA/' },
-{ url: 'https://juliaavramenko.github.io/practice-portfolio/' }, 
-{ url: 'https://juliaavramenko.github.io/how-to-learn-bootcamp/' },
-{ url: 'https://juliaavramenko.github.io/mesto-project-bootcamp/' },
-{ url: 'https://juliaavramenko.github.io/burgers-angular/' },
+const slides = ref([
+    { url: 'https://juliaavramenko.github.io/react-nft-project/', },
+    { url: 'https://juliaavramenko.github.io/go-scooter-pass/' },
+    { url: 'https://juliaavramenko.github.io/ams-software-test-task/' },
+    { url: 'https://juliaavramenko.github.io/burger-react-practicum/' },
+    { url: 'https://juliaavramenko.github.io/house-hunter-react/' },
+    { url: 'https://juliaavramenko.github.io/language-school/' },
+    { url: 'https://juliaavramenko.github.io/it-studio/' },
+    { url: 'https://juliaavramenko.github.io/russian-travel-JUL-LIA/' },
+    { url: 'https://juliaavramenko.github.io/practice-portfolio/' },
+    { url: 'https://juliaavramenko.github.io/how-to-learn-bootcamp/' },
+    { url: 'https://juliaavramenko.github.io/mesto-project-bootcamp/' },
+    { url: 'https://juliaavramenko.github.io/decent-test-task/', styles: { width: '400%', height: '400%' } },
+    { url: 'https://juliaavramenko.github.io/forecast-vue-test-task/', width: '400%', height: '400%' },
+    { url: 'https://juliaavramenko.github.io/burgers-angular/' },
 ]);
 
 const currentSlide = ref(0);
 
 const prevSlide = () => {
-currentSlide.value = (currentSlide.value > 0) ? currentSlide.value - 1 : slides.value.length - 1;
+    currentSlide.value = (currentSlide.value > 0) ? currentSlide.value - 1 : slides.value.length - 1;
 };
 
 const nextSlide = () => {
-currentSlide.value = (currentSlide.value < slides.value.length - 1) ? currentSlide.value + 1 : 0;
+    currentSlide.value = (currentSlide.value < slides.value.length - 1) ? currentSlide.value + 1 : 0;
 };
 
 </script>
 
 <template>
-<section class="works" id="works">    
-    <div class="works__container">
-        <h3 class="works__title">My projects</h3>   
-        
-        <div class="slider">
-<div class="slides" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-<div class="slide" v-for="(slide, index) in slides" :key="index">
-<!-- Ваш контент для слайда -->
-<iframe :src="slide.url" 
-    frameborder="0"
-    scroll="none"   
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen class="works__video" 
-    seamless
-></iframe>
-</div>
-</div>
-<div class="buttons">
-<button @click="prevSlide" class="button">Previous</button>
-<button @click="nextSlide" class="button">Next</button>
-</div>
-</div>
-                <!-- <div class="works__cards">
-                    <article class="works__card1">
-                        <a href="https://juliaavramenko.github.io/how-to-learn-bootcamp/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/how-to-learn-bootcamp/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video1" seamless></iframe>
-                    </article>
+    <section class="works" id="works">
+        <div class="works__container">
+            <h3 class="works__title">My projects</h3>
 
-                    <article class="works__card2">
-                        <a href="https://juliaavramenko.github.io/mesto-project-bootcamp/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/mesto-project-bootcamp/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video2" seamless></iframe>
+            <div class="slider">
+                <div class="slides" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+                    <div class="slide" v-for="(slide, index) in slides" :key="index">
 
-                    </article>
-                    <article class="works__card3">
-                        <a href="https://juliaavramenko.github.io/burgers-angular/" class="works__link" target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/burgers-angular/"
+                        <iframe :src="slide.url" frameborder="0" loading="eager" scroll="none"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video3" seamless></iframe>
-                    </article>
-                    <article class="works__card4">
-                        <a href="https://juliaavramenko.github.io/practice-portfolio/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/practice-portfolio/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video9"></iframe>
-                    </article>
-                    <article class="works__card5">
-                        <a href="https://juliaavramenko.github.io/russian-travel-JUL-LIA/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/russian-travel-JUL-LIA/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video5"></iframe>
-                    </article>
-                    <article class="works__card6">
-                        <a href="https://juliaavramenko.github.io/it-studio/" class="works__link" target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/it-studio/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video6"></iframe>
-                    </article>
-                    <article class="works__card7">
-                        <a href="https://juliaavramenko.github.io/language-school/" class="works__link" target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/language-school/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video7"></iframe>
-                    </article>
-                    <article class="works__card8">
-                        <a href="https://juliaavramenko.github.io/house-hunter-react/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/house-hunter-react/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video9"></iframe>
-                    </article>
-                    <article class="works__card9">
-                        <a href="https://juliaavramenko.github.io/burger-react-practicum/" class="works__link"
-                            target="_blank">
-                            <img src="<%=require('./images/right-arrow.svg')%>" alt="" class="works__icon">
-                        </a>
-                        <iframe width="550px" height="500px" scroll="none"
-                            src="https://juliaavramenko.github.io/burger-react-practicum/"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen class="works__video9"></iframe>
-                    </article> -->
-
-                <!-- </div> -->
+                            allowFullScreen class="works__video" seamless></iframe>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button @click="prevSlide" class="button">Previous</button>
+                    <button @click="nextSlide" class="button">Next</button>
+                </div>
             </div>
-        </section>
- 
+        </div>
+    </section>
+
 </template>
 
-<style scoped>
+<!-- <script>
+import { ref, watch } from 'vue';
 
+export default {
+    setup() {
+        // Реактивная ссылка для атрибута src
+        const src = ref('default.jpg');
+
+        // Реактивный объект для стилей
+        const dynamicStyle = ref({});
+
+        // Функция для определения стилей на основе значения src
+        const getStyleBasedOnSrc = (srcValue) => {
+            // Здесь ваша логика для определения стилей на основе значения src
+            if (srcValue === 'https://juliaavramenko.github.io/decent-test-task/' || srcValue === 'https://juliaavramenko.github.io/forecast-vue-test-task/') {
+                return { width: '400%', height: '400%' };
+            }
+            // Добавьте другие условия для разных значений src
+            return { width: '200%', height: '200%' };
+        };
+
+        // Отслеживаем изменения в src и обновляем стили
+        watch(src, (newSrc) => {
+            dynamicStyle.value = getStyleBasedOnSrc(newSrc);
+        });
+
+        return { src, dynamicStyle };
+    }
+}
+
+</script> -->
+
+<style scoped>
 .slider {
     display: flex;
     flex-direction: column;
@@ -163,6 +95,7 @@ currentSlide.value = (currentSlide.value < slides.value.length - 1) ? currentSli
     position: relative;
     overflow: hidden;
 }
+
 .slides {
     display: flex;
     width: 900px;
@@ -183,18 +116,21 @@ currentSlide.value = (currentSlide.value < slides.value.length - 1) ? currentSli
         height: 300px;
     }
 }
+
 .slide {
-    min-width: 100%; 
+    min-width: 100%;
     transition: transform 0.5s ease;
 }
+
 iframe {
- width: 550px;
- height: 500px;
+    width: 550px;
+    height: 500px;
 }
+
 .works__video {
     width: 200%;
     height: 200%;
-    border: 0;    
+    border: 0;
     list-style-type: none;
     margin-bottom: 0;
     margin-top: 0;
@@ -228,15 +164,18 @@ iframe {
     column-gap: 50px;
     margin-top: 30px;
 }
+
 .button {
     background-color: #002726;
     color: #ffffffcc;
     width: 130px;
     height: 40px;
     font-size: 18px;
-    border-radius: 5px; /* Скругление углов */
+    border-radius: 5px;
+    /* Скругление углов */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .button:hover {
     opacity: 0.7;
 }
@@ -252,7 +191,7 @@ iframe {
     position: relative;
     z-index: 2;
     padding-top: 50px;
-    padding-bottom: 50px;    
+    padding-bottom: 50px;
 }
 
 .works::before {
@@ -279,9 +218,9 @@ iframe {
     margin: 0;
     padding: 0;
     font-weight: 600;
-    font-size: 60px;  
+    font-size: 60px;
     color: #002726;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
 }
 
 @media (max-width: 1200px) {
@@ -296,7 +235,4 @@ iframe {
         margin-bottom: 20px;
     }
 }
-
-
-
 </style>

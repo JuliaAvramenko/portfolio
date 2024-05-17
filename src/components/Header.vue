@@ -71,13 +71,6 @@
     width: 350px;
 }
 
-
-/* @media (max-width: 1400px) {
-    .header__list {
-        width: 350px;
-    }
-} */
-
 .header__link {
 text-decoration: none;
 color: rgb(228, 226, 226);

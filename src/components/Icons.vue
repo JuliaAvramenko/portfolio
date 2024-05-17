@@ -66,12 +66,7 @@
 
 @media (max-width: 850px) {
     .icons {
-        display: none;
-        /* height: 90px;
-        right: 0;
-        row-gap: 5px;
-        top: 180px;
-        width: 30px; */
+        display: none;       
     }
 }
 

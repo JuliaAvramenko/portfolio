@@ -131,8 +131,7 @@
     margin: 0;
     padding: 0;
     font-weight: 300;
-    font-size: 25px;
-    /* color: rgb(228, 226, 226); */
+    font-size: 25px;    
 }
 
 @media (max-width: 1200px) {
@@ -186,12 +185,6 @@
     row-gap: 25px;
 }
 
-/* @media (max-width: 1400px) {
-    .footer__info {     
-        row-gap: 25px;        
-    }
-} */
-
 @media (max-width: 700px) {
     .footer__info {
         margin-left: 0;
@@ -222,13 +215,6 @@
     width: 30px;
     height: 30px;
 }
-
-/* @media (max-width: 1400px) {
-    .footer__icon {
-        width: 30px;
-        height: 30px;
-    }
-} */
 
 @media (max-width: 700px) {
     .footer__icon {
