@@ -4,22 +4,21 @@
 
 <template>
     <header class="header">
-                        <nav class="header__menu">
-                            <ul class="header__list">
-                                <li class="header__item"> <a href="#about" class="header__link">About me</a>
-                                </li>
-                                <li class="header__item"> <a href="#works" class="header__link">My works</a>
-                                </li>
-                                <li class="header__item"> <a href="#contact" class="header__link">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li class="header__item"> <a href="#about" class="header__link">About me</a>
+                </li>
+                <li class="header__item"> <a href="#works" class="header__link">My works</a>
+                </li>
+                <li class="header__item"> <a href="#contact" class="header__link">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-     
+
 </template>
 
 <style scoped>
-
 .header {
     display: flex;
     flex-direction: column;
@@ -32,15 +31,17 @@
 @media (max-width: 1200px) {
     .header {
         right: 50px;
-       
-}}
+
+    }
+}
 
 @media (max-width: 700px) {
     .header {
-        position: relative;       
+        position: relative;
         top: 80px;
         right: 0px;
-}}
+    }
+}
 
 .header__menu {
     margin: 0;
@@ -72,12 +73,15 @@
 }
 
 .header__link {
-text-decoration: none;
-color: rgb(228, 226, 226);
+    text-decoration: none;
+    color: rgb(228, 226, 226);
 }
 
 .header__link:hover {
-color: rgb(182, 179, 179);
+    text-shadow: 1px 1px 1px black;
+    color: rgb(255, 191, 0);
+    opacity: 0.7;
+    /* color: rgb(182, 179, 179); */
 }
 
 .header__item {
@@ -99,5 +103,4 @@ color: rgb(182, 179, 179);
         font-size: 20px;
     }
 }
-
 </style>

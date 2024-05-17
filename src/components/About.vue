@@ -189,6 +189,11 @@ onUnmounted(() => {
     }
 }
 
+@media (max-width: 500px) {
+    .icons {
+        width: 400px;
+    }
+}
 
 .icon {
     width: 50px;

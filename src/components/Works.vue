@@ -117,6 +117,13 @@ export default {
     }
 }
 
+@media (max-width: 500px) {
+    .slides {
+        width: 400px;
+        height: 300px;
+    }
+}
+
 .slide {
     min-width: 100%;
     transition: transform 0.5s ease;
